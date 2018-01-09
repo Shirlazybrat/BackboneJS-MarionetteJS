@@ -84,46 +84,46 @@
 
 //............................................................................//
 
-// Connecting to the server
-// three operations tha work with the persistent store
-fetch() //GET the model from the server
-save() //update or insert the model to the server (PUT/POST)
-destroy() //DELETE a model from the server
+// // Connecting to the server
+// // three operations tha work with the persistent store
+// fetch() //GET the model from the server
+// save() //update or insert the model to the server (PUT/POST)
+// destroy() //DELETE a model from the server
 
-// Backbone knows the URL of the API by reling on a URL root property of the models
-// to construct a url to the corresponding endpoint
-var Song = Backbone.model.extend({
-    urlRoot: "/api/songs"
-});
+// // Backbone knows the URL of the API by reling on a URL root property of the models
+// // to construct a url to the corresponding endpoint
+// var Song = Backbone.model.extend({
+//     urlRoot: "/api/songs"
+// });
 
-// example.com/api/songs
+// // example.com/api/songs
 
-// fetch a Model from the server
-// result request made ---> GET /api/songs/1
-var song = new Song({
-    id: 1
-});
-song.fetch();
+// // fetch a Model from the server
+// // result request made ---> GET /api/songs/1
+// var song = new Song({
+//     id: 1
+// });
+// song.fetch();
 
-//Update a model in the server
-// result request made ---> PUT /api/songs/1
-song.set("title", "newTitle");
-song.save();
+// //Update a model in the server
+// // result request made ---> PUT /api/songs/1
+// song.set("title", "newTitle");
+// song.save();
 
-// Tell backbone which property of the model to use as the id instead of the default unique id
-var Song = Backbone.model.extend({
-    idAttribute: "songId"
-});
-var song = new Song({ songId: 1 });
+// // Tell backbone which property of the model to use as the id instead of the default unique id
+// var Song = Backbone.model.extend({
+//     idAttribute: "songId"
+// });
+// var song = new Song({ songId: 1 });
 
-// all methods are asynchronous and accept an error callback
-var song = new Song();
+// // all methods are asynchronous and accept an error callback
+// var song = new Song();
 
-song.fetch({
-    success: function() {
-        console.log(successMessage);
-    },
-    error: function() {
-        console.log(errorMessage);
-    }
-});
+// song.fetch({
+//     success: function() {
+//         console.log(successMessage);
+//     },
+//     error: function() {
+//         console.log(errorMessage);
+//     }
+// });
